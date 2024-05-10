@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Negocios;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use App\Models\Productos;
 
 class NegociosController extends Controller
 {
@@ -109,6 +110,7 @@ class NegociosController extends Controller
     public function show($id)
     {
         $negocio = Negocios::find($id);
-        return view('negocios.show', compact('negocio'));
+        $productos = Productos::where('negocio_id', $id)->orderBy('id', 'desc')->paginate(10);
+        return view('negocios.show', compact('negocio', 'productos'));
     }
 }

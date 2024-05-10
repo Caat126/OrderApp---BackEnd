@@ -186,7 +186,7 @@
         @auth
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
-                <a href="index3.html" class="brand-link">
+                <a href="{{ route('home') }}" class="brand-link">
                     <img src="{{ asset('logo.png') }}" alt="AdminLTE Logo" class="brand-image elevation-3"
                         style="opacity: .8">
                     <span class="brand-text font-weight-light">AdminPedidos</span>
@@ -246,6 +246,14 @@
                                         <i class="nav-icon fas fa-building"></i>
                                         <p>
                                             Negocios
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('/productos')}}" class="nav-link {{ (request()->is('productos*')) ? 'active' : '' }}">
+                                        <i class="nav-icon fas fa-tags"></i>
+                                        <p>
+                                            Productos
                                         </p>
                                     </a>
                                 </li>
