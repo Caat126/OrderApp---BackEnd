@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\NegociosController;
 use App\Http\Controllers\ProductosController;
 
@@ -42,6 +43,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/productos/actualizar/{id}', [ProductosController::class, 'edit'])->name('productos.edit');
     Route::put('/productos/actualizar/{id}', [ProductosController::class, 'update'])->name('productos.update');
     Route::get('/productos/estado/{id}', [ProductosController::class, 'estado'])->name('productos.estado');
+
+    // para pedidos
+    Route::get('/pedidos', [PedidosController::class, 'index'])->name('pedidos.index');
+    Route::get('/pedidos/registrar', [PedidosController::class, 'create'])->name('pedidos.create');
+    Route::get('/pedidos/estado/{id}/{estado}', [PedidosController::class, 'estado'])->name('pedidos.estado');
+    Route::get('/pedidos/ver/{id}', [PedidosController::class, 'show'])->name('pedidos.show');
+
 
 });
 

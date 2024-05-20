@@ -41,7 +41,7 @@
                                 <span class="badge badge-danger shadow">Inactivo</span>
                             @endif
                             <br><br>
-                            <p class="text-justify">{{ $negocio->descripcion }}</p>
+                            <p class="text-justify text-center">{{ $negocio->descripcion }}</p>
                             <hr>
                             <a href="{{ url('/negocios') }}" class="btn btn-primary shadow">Volver al listado</a>
                         </div>
